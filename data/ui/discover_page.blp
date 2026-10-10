@@ -1,20 +1,23 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $DiscoverPage: Adw.ToolbarView {
-  [top]
-  Adw.HeaderBar {
-    [title]
-    Adw.Clamp {
-      maximum-size: 400;
+template $DiscoverPage: Box {
+  orientation: vertical;
 
-      SearchEntry search_entry {
-        placeholder-text: _("Search LibriVox audiobooks...");
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [title]
+      Adw.Clamp {
+        maximum-size: 400;
+
+        SearchEntry search_entry {
+          placeholder-text: _("Search LibriVox audiobooks...");
+        }
       }
     }
-  }
 
-  content: Stack stack {
+    content: Stack stack {
     StackPage {
       name: "results";
 
@@ -57,5 +60,6 @@ template $DiscoverPage: Adw.ToolbarView {
         title: _("Searching LibriVox...");
       };
     }
-  };
+    };
+  }
 }

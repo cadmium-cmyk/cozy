@@ -8,7 +8,7 @@ log = logging.getLogger("DiscoverView")
 
 
 @Gtk.Template.from_resource("/com/github/geigi/cozy/ui/discover_page.ui")
-class DiscoverPage(Adw.ToolbarView):
+class DiscoverPage(Gtk.Box):
     __gtype_name__ = "DiscoverPage"
 
     search_entry: Gtk.SearchEntry = Gtk.Template.Child()
