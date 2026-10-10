@@ -1,0 +1,61 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $DiscoverPage: Adw.ToolbarView {
+  [top]
+  Adw.HeaderBar {
+    [title]
+    Adw.Clamp {
+      maximum-size: 400;
+
+      SearchEntry search_entry {
+        placeholder-text: _("Search LibriVox audiobooks...");
+      }
+    }
+  }
+
+  content: Stack stack {
+    StackPage {
+      name: "results";
+
+      child: ScrolledWindow {
+        child: Viewport {
+          child: FlowBox results_box {
+            margin-top: 18;
+            margin-bottom: 18;
+            margin-start: 18;
+            margin-end: 18;
+            halign: center;
+            valign: start;
+            column-spacing: 18;
+            row-spacing: 18;
+            min-children-per-line: 1;
+            max-children-per-line: 5;
+            selection-mode: none;
+          };
+        };
+      };
+    }
+
+    StackPage {
+      name: "empty";
+
+      child: Adw.StatusPage {
+        icon-name: "cozy.search-large-symbolic";
+        title: _("Discover Audiobooks");
+        description: _("Search thousands of free public domain audiobooks on LibriVox");
+      };
+    }
+
+    StackPage {
+      name: "loading";
+
+      child: Adw.StatusPage loading_status_page {
+        paintable: Adw.SpinnerPaintable {
+          widget: loading_status_page;
+        };
+        title: _("Searching LibriVox...");
+      };
+    }
+  };
+}

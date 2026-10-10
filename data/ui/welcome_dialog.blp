@@ -60,6 +60,56 @@ template $WelcomeDialog: Adw.Dialog {
         }
       }
     }
+    Adw.StatusPage audiobookshelf_page {
+      title: _("Audiobookshelf Server");
+      description: _("Connect Cozy to your Audiobookshelf server (optional)");
+      margin-start: 12;
+      margin-end: 12;
+
+      child: Box {
+        orientation: vertical;
+        spacing: 18;
+
+        Adw.PreferencesGroup {
+          Adw.EntryRow abs_host_entry {
+            title: _("Server Address");
+            text: "http://";
+          }
+
+          Adw.EntryRow abs_username_entry {
+            title: _("Username");
+          }
+
+          Adw.PasswordEntryRow abs_password_entry {
+            title: _("Password");
+          }
+        }
+
+        Label abs_status_label {
+          label: "";
+          visible: false;
+
+          styles ["dim-label"]
+        }
+
+        Box {
+          halign: center;
+          spacing: 12;
+
+          Button {
+            label: _("Skip");
+            clicked => $skip_audiobookshelf();
+          }
+
+          Button abs_connect_button {
+            label: _("Connect");
+            styles ["suggested-action"]
+            clicked => $connect_audiobookshelf();
+          }
+        }
+      };
+    }
+
     Adw.StatusPage locations_page {
       title: _("Add Audiobooks");
       margin-start: 12;

@@ -21,8 +21,10 @@ from cozy.ui.library_view import LibraryView
 from cozy.ui.main_view import CozyUI
 from cozy.ui.media_controller import MediaController
 from cozy.ui.search_view import SearchView
+from cozy.ui.discover_view import DiscoverPage
 from cozy.ui.toaster import ToastNotifier
 from cozy.view_model.app_view_model import AppViewModel
+from cozy.view_model.discover_view_model import DiscoverViewModel
 from cozy.view_model.book_detail_view_model import BookDetailViewModel
 from cozy.view_model.headerbar_view_model import HeaderbarViewModel
 from cozy.view_model.library_view_model import LibraryViewMode, LibraryViewModel
@@ -98,6 +100,7 @@ class AppController(metaclass=Singleton):
         binder.bind_to_constructor(AppViewModel, lambda: AppViewModel())
         binder.bind_to_constructor(SettingsViewModel, lambda: SettingsViewModel())
         binder.bind_to_constructor(StoragesViewModel, lambda: StoragesViewModel())
+        binder.bind_to_constructor(DiscoverViewModel, lambda: DiscoverViewModel())
 
     def open_author(self, author: str):
         self.library_view_model.library_view_mode = LibraryViewMode.AUTHOR

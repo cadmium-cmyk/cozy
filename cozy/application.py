@@ -77,3 +77,5 @@ class Application(Adw.Application):
     @staticmethod
     def init_custom_widgets():
         FilterListBox()
+        from cozy.ui.discover_view import DiscoverPage
+        _ = DiscoverPage

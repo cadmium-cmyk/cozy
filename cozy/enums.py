@@ -17,3 +17,4 @@ class View(Enum):
     LIBRARY_BOOKS = auto()
     BOOK_DETAIL = auto()
     NO_MEDIA = auto()
+    DISCOVER = auto()
