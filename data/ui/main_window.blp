@@ -123,6 +123,14 @@ Adw.ApplicationWindow app_window {
                             ]
                           };
                         }
+
+                        Adw.ViewStackPage {
+                          name: 'discover';
+                          title: _("Discover");
+                          icon-name: 'cozy.book-open-symbolic';
+
+                          child: $DiscoverPage {};
+                        }
                       };
 
                       content: Stack book_stack {
