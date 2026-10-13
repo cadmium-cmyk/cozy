@@ -21,7 +21,6 @@ from cozy.ui.library_view import LibraryView
 from cozy.ui.main_view import CozyUI
 from cozy.ui.media_controller import MediaController
 from cozy.ui.search_view import SearchView
-from cozy.ui.discover_view import DiscoverPage
 from cozy.ui.toaster import ToastNotifier
 from cozy.view_model.app_view_model import AppViewModel
 from cozy.view_model.discover_view_model import DiscoverViewModel
