@@ -177,6 +177,10 @@ template $MediaController: Adw.BreakpointBin {
       ScaleButton volume_button {
         tooltip-text: _("Volume control");
 
+        accessibility {
+          label: _("Volume control");
+        }
+
         adjustment: Adjustment {
           lower: 0;
           upper: 1;
@@ -195,6 +199,10 @@ template $MediaController: Adw.BreakpointBin {
         receives-default: true;
         tooltip-text: _("Playback speed");
         icon-name: 'cozy.playback-speed-symbolic';
+
+        accessibility {
+          label: _("Playback speed");
+        }
 
         styles [
           "flat",

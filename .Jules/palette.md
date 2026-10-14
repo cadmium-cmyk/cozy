@@ -1,0 +1,3 @@
+## 2024-10-15 - Missing Accessible Labels on Icon-only Buttons
+**Learning:** Found an accessibility issue pattern specific to this app's components: Many GTK4 icon-only buttons (`MenuButton`, `ToggleButton`, `ScaleButton`) implemented with Blueprint have `tooltip-text` but lack `accessibility { label: _("..."); }`. While visual users see the tooltip, screen reader users might miss the context if Orca relies on the accessible name. Existing buttons like `search_button` correctly implement both.
+**Action:** When adding icon-only buttons in Blueprint/GTK4, always ensure both `tooltip-text` (for pointer users) and `accessibility { label: _("..."); }` (for screen reader users) are provided.
