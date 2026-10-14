@@ -15,6 +15,10 @@ template $Headerbar: Box {
       visible: false;
       icon-name: 'sidebar-show-symbolic';
       tooltip-text: _("Toggle Filter Sidebar");
+
+      accessibility {
+        label: _("Toggle Filter Sidebar");
+      }
     }
 
     [end]
@@ -45,6 +49,10 @@ template $Headerbar: Box {
       visible: false;
       can-focus: true;
       tooltip-text: _("Display background task progress");
+
+      accessibility {
+        label: _("Display background task progress");
+      }
 
       Adw.Spinner progress_spinner {}
 
